@@ -1,4 +1,4 @@
-.container{
+.container {
     padding: 50px 30px;
     text-align: center;
     width: 100%;
@@ -6,26 +6,26 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 30px;
-    background-color: rgb(238, 253, 255);
-    min-height: 80vh;
-}
-
-.heading{
+    background-color: rgb(238, 252, 255);
+    min-height: 85vh;
+  }
+  
+  .heading {
     margin: 0 auto;
     max-width: 500px;
-    color: black;
-    font-size: 55px;
-    line-height: 65px;
+    color: #000;
+    font-size: 3.1rem;
+    line-height: 4.1rem;
     font-weight: bold;
     letter-spacing: 1px;
-}
-
-.heading span{
+  }
+  
+  .heading span {
     background-clip: text;
-    background-image: linear-gradient(to right,#239ce2, #1369b9);
+    background-image: linear-gradient(to right, #239ce2, #1369b9);
     color: transparent;
-}
-
-.right img{
+  }
+  
+  .right img {
     width: 400px;
-}
+  }
