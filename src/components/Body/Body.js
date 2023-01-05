@@ -18,7 +18,11 @@ function Body() {
           />
         ))}
       </div>
-      <button>Download</button>
+      <button>Download <ArrowDown />
+      </button>
+    </div>
+    <div className={styles.main}>
+      <Editor/>
     </div>
     </div>
   )
