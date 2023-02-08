@@ -3,7 +3,8 @@ import './App.css';
 import React from "react";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
-import Nav from "./components/Nav/Nav"
+import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer"
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Nav/>
       <Header />
       <Body />
+      <Footer />
     </div>
   );
 }
