@@ -9,7 +9,8 @@ const Nav = () => {
             <img src={IMG1} alt="logo_img" className='logo_img1' />
             <div className="navbar_options">
                 <ul className='navbar_menu'>
-                    <li><a href="" className='btn' >LOGIN</a></li>
+                    <li><a href="/Login" className='btn' target={"_blank"}>LOGIN</a></li>
+                    <li><a href="/Signup" className='btn'target={"_blank"}>SIGNUP</a></li>
                 </ul>
             </div>
         </header>

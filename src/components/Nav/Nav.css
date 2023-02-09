@@ -44,4 +44,9 @@
     margin: 0 2rem;
 }
 
+.navbar_menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
 

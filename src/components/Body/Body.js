@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
-
 import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
-
+import Footer from "../Footer/Footer"
 import styles from "./Body.module.css";
 
 function Body() {
@@ -60,45 +59,47 @@ function Body() {
   });
 
   return (
-    <div className={styles.container}>
-      <p className={styles.heading}>Resume Builder</p>
-      <div className={styles.toolbar}>
-        <div className={styles.colors}>
-          {colors.map((item) => (
-            <span
-              key={item}
-              style={{ backgroundColor: item }}
-              className={`${styles.color} ${
-                activeColor === item ? styles.active : ""
-              }`}
-              onClick={() => setActiveColor(item)}
-            />
-          ))}
+    <div>
+      <div className={styles.container}>
+        <p className={styles.heading}>Resume Builder</p>
+        <div className={styles.toolbar}>
+          <div className={styles.colors}>
+            {colors.map((item) => (
+              <span
+                key={item}
+                style={{ backgroundColor: item }}
+                className={`${styles.color} ${activeColor === item ? styles.active : ""
+                  }`}
+                onClick={() => setActiveColor(item)}
+              />
+            ))}
+          </div>
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <button>
+                  Download <ArrowDown />
+                </button>
+              );
+            }}
+            content={() => resumeRef.current}
+          />
         </div>
-        <ReactToPrint
-          trigger={() => {
-            return (
-              <button>
-                Download <ArrowDown />
-              </button>
-            );
-          }}
-          content={() => resumeRef.current}
-        />
+        <div className={styles.main}>
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+          <Resume
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+            activeColor={activeColor}
+          />
+        </div>
       </div>
-      <div className={styles.main}>
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <Resume
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-          activeColor={activeColor}
-        />
-      </div>
+      <Footer />
     </div>
   );
 }
