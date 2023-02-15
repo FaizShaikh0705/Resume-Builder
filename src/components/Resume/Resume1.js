@@ -9,9 +9,9 @@ import {
   Phone,
 } from "react-feather";
 
-import styles from "./Resume2.module.css";
+import styles from "./Resume1.module.css";
 
-const Resume = forwardRef((props, ref) => {
+const Resume1 = forwardRef((props, ref) => {
   const information = props.information;
   const sections = props.sections;
   const containerRef = useRef();
@@ -179,7 +179,7 @@ const Resume = forwardRef((props, ref) => {
                 <span />
               )}
               {item.college ? (
-                <p className={styles.subTitle}>{item.college}</p>
+                <p className={styles.subTitle}>Some college name</p>
               ) : (
                 <span />
               )}
@@ -355,4 +355,4 @@ const Resume = forwardRef((props, ref) => {
   );
 });
 
-export default Resume;
+export default Resume1;

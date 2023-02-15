@@ -6,6 +6,14 @@ import Resume from "../Resume/Resume";
 import Footer from "../Footer/Footer"
 import styles from "./Body.module.css";
 
+// tabs fro templates
+
+// import Tab from 'react-bootstrap/Tab';
+// import Tabs from 'react-bootstrap/Tabs';
+// import template1 from "../Resume/Resume.module.css"
+// import template2 from "../Resume/Resume1.module.css"
+// import template3 from "../Resume/Resume2.module.css"
+
 function Body() {
   const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
   const sections = {
@@ -74,6 +82,21 @@ function Body() {
               />
             ))}
           </div>
+          {/* 
+          <Tabs defaultActiveKey="profile"
+      id="fill-tab-example"
+      className="mb-3"
+      fill>
+      <Tab eventKey="template" title="Template1">
+        <Sonnet />
+      </Tab>
+      <Tab eventKey="template" title="Template2">
+        <Sonnet />
+      </Tab>
+      <Tab eventKey="template" title="Template3">
+        <Sonnet />
+      </Tab>
+    </Tabs> */}
           <ReactToPrint
             trigger={() => {
               return (
