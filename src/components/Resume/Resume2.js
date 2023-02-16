@@ -44,9 +44,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.workExp?.id)}
         onDragEnd={() => setSource(info.workExp?.id)}
-        className={`${styles.section} ${
-          info.workExp?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.workExp?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>{info.workExp.sectionTitle}</div>
         <div className={styles.content}>
@@ -107,9 +106,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.project?.id)}
         onDragEnd={() => setSource(info.project?.id)}
-        className={`${styles.section} ${
-          info.project?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.project?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>{info.project.sectionTitle}</div>
         <div className={styles.content}>
@@ -163,9 +161,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.education?.id)}
         onDragEnd={() => setSource(info.education?.id)}
-        className={`${styles.section} ${
-          info.education?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.education?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>
           {info.education?.sectionTitle}
@@ -202,9 +199,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.achievement?.id)}
         onDragEnd={() => setSource(info.achievement?.id)}
-        className={`${styles.section} ${
-          info.achievement?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.achievement?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>
           {info.achievement?.sectionTitle}
@@ -230,9 +226,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.summary?.id)}
         onDragEnd={() => setSource(info.summary?.id)}
-        className={`${styles.section} ${
-          info.summary?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.summary?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>{info.summary?.sectionTitle}</div>
         <div className={styles.content}>
@@ -246,9 +241,8 @@ const Resume2 = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.other?.id)}
         onDragEnd={() => setSource(info.other?.id)}
-        className={`${styles.section} ${
-          info.other?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} ${info.other?.sectionTitle ? "" : styles.hidden
+          }`}
       >
         <div className={styles.sectionTitle}>{info.other?.sectionTitle}</div>
         <div className={styles.content}>
@@ -307,38 +301,41 @@ const Resume2 = forwardRef((props, ref) => {
     <div ref={ref}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
-          <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
-
+          <div className={styles.header2}>
+            <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
+            <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
+          </div>
           <div className={styles.links}>
-            {info.basicInfo?.detail?.email ? (
-              <a className={styles.link} type="email">
-                <AtSign /> {info.basicInfo?.detail?.email}
-              </a>
-            ) : (
-              <span />
-            )}
-            {info.basicInfo?.detail?.phone ? (
-              <a className={styles.link}>
-                <Phone /> {info.basicInfo?.detail?.phone}
-              </a>
-            ) : (
-              <span />
-            )}
-            {info.basicInfo?.detail?.linkedin ? (
-              <a className={styles.link}>
-                <Linkedin /> {info.basicInfo?.detail?.linkedin}
-              </a>
-            ) : (
-              <span />
-            )}
-            {info.basicInfo?.detail?.github ? (
-              <a className={styles.link}>
-                <GitHub /> {info.basicInfo?.detail?.github}
-              </a>
-            ) : (
-              <span />
-            )}
+            <ul>
+              <li>{info.basicInfo?.detail?.email ? (
+                <a className={styles.link} type="email">
+                  <AtSign /> {info.basicInfo?.detail?.email}
+                </a>
+              ) : (
+                <span />
+              )}</li>
+              <li> {info.basicInfo?.detail?.phone ? (
+                <a className={styles.link}>
+                  <Phone /> {info.basicInfo?.detail?.phone}
+                </a>
+              ) : (
+                <span />
+              )}</li>
+              <li>{info.basicInfo?.detail?.linkedin ? (
+                <a className={styles.link}>
+                  <Linkedin /> {info.basicInfo?.detail?.linkedin}
+                </a>
+              ) : (
+                <span />
+              )}</li>
+              <li>{info.basicInfo?.detail?.github ? (
+                <a className={styles.link}>
+                  <GitHub /> {info.basicInfo?.detail?.github}
+                </a>
+              ) : (
+                <span />
+              )}</li>
+            </ul>
           </div>
         </div>
 
