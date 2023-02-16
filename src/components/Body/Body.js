@@ -3,16 +3,13 @@ import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
 import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
+import Resume1 from "../Resume/Resume1"
+import Resume2 from "../Resume/Resume2"
 import Footer from "../Footer/Footer"
 import styles from "./Body.module.css";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
-// tabs fro templates
-
-// import Tab from 'react-bootstrap/Tab';
-// import Tabs from 'react-bootstrap/Tabs';
-// import template1 from "../Resume/Resume.module.css"
-// import template2 from "../Resume/Resume1.module.css"
-// import template3 from "../Resume/Resume2.module.css"
 
 function Body() {
   const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
@@ -70,6 +67,13 @@ function Body() {
     <div>
       <div className={styles.container}>
         <p className={styles.heading}>Resume Builder</p>
+        <div className={styles.main}>
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+        </div>
         <div className={styles.toolbar}>
           <div className={styles.colors}>
             {colors.map((item) => (
@@ -82,21 +86,6 @@ function Body() {
               />
             ))}
           </div>
-          {/* 
-          <Tabs defaultActiveKey="profile"
-      id="fill-tab-example"
-      className="mb-3"
-      fill>
-      <Tab eventKey="template" title="Template1">
-        <Sonnet />
-      </Tab>
-      <Tab eventKey="template" title="Template2">
-        <Sonnet />
-      </Tab>
-      <Tab eventKey="template" title="Template3">
-        <Sonnet />
-      </Tab>
-    </Tabs> */}
           <ReactToPrint
             trigger={() => {
               return (
@@ -108,19 +97,38 @@ function Body() {
             content={() => resumeRef.current}
           />
         </div>
-        <div className={styles.main}>
-          <Editor
-            sections={sections}
-            information={resumeInformation}
-            setInformation={setResumeInformation}
-          />
-          <Resume
+        <Tabs>
+            <TabList>
+              <Tab>Template 1</Tab>
+              <Tab>Template 2</Tab>
+              <Tab>Template 2</Tab>
+            </TabList>
+
+            <TabPanel>
+            <Resume
             ref={resumeRef}
             sections={sections}
             information={resumeInformation}
             activeColor={activeColor}
           />
-        </div>
+            </TabPanel>
+            <TabPanel>
+            <Resume1
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+            activeColor={activeColor}
+          />
+            </TabPanel>
+            <TabPanel>
+            <Resume2
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+            activeColor={activeColor}
+          />
+            </TabPanel>
+          </Tabs>
       </div>
       <Footer />
     </div>
