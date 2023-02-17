@@ -1,6 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import IMG1 from '../../assets/resumelogo.png'
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
@@ -9,8 +10,8 @@ const Nav = () => {
             <img src={IMG1} alt="logo_img" className='logo_img1' />
             <div className="navbar_options">
                 <ul className='navbar_menu'>
-                    <li><a href="/Login" className='btn' target={"_blank"}>LOGIN</a></li>
-                    <li><a href="/Signup" className='btn'target={"_blank"}>SIGNUP</a></li>
+                    <li><Link to="/Login" className='btn' target="_blank" rel="noopener noreferrer">LOGIN</Link></li>
+                    <li><Link to="/Signup" className='btn'target="_blank" rel="noopener noreferrer">SIGNUP</Link></li>
                 </ul>
             </div>
         </header>
