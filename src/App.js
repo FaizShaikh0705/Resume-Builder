@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Login from "./components/Login/Login"
 import Signup from "./components/Signup/Signup"
 import "./App.css";
-import PrivateRoute from "./common/guards/PrivateRoute";
+
 
 function App() {
   return (
