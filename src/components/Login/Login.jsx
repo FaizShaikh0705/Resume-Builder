@@ -27,7 +27,7 @@ const Login = () => {
       .then(async (res) => {
         setSubmitButtonDisabled(false);
         
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
