@@ -60,7 +60,7 @@ const Signup = () => {
           <p>
             Already have an account? {" "}
             <span>
-              <Link to="/Login">Login</Link>
+              <Link to="/">Login</Link>
             </span>
           </p>
         </div>
